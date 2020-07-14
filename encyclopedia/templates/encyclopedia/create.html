@@ -1,0 +1,24 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Create New Page
+{% endblock %}
+
+{% block body %}
+    <h1>This page is for Creators!</h1><br>
+
+    <form action="{% url 'create' %}" method="POST">
+        {% csrf_token %}
+        <fieldset>
+            <div class="form-group">
+                <label for="title">Title:</label><br>
+                <input type="text" name="title" placeholder="Enter Title" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="content">Content:</label><br>
+                <textarea type="textarea" rows="8" name="content" placeholder="Enter the Markdown content for the page" class="form-control"></textarea>
+            </div>         
+            <button type="submit" class="btn btn-primary">Save New Page</button>
+        </fieldset>
+    </form>
+{% endblock %}
