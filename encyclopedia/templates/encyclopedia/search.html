@@ -8,7 +8,7 @@
     {% if conformation == 1 %}
       {{content|safe}}
     {% else %}
-      <h1>Related Pages to "{{entry}}"</h1>
+      <h1>Pages Related to "{{entry}}"</h1>
       <ul>
         {% for ent in content %}
           <li><a href="wiki/{{ent}}">{{ent}}</a></li>

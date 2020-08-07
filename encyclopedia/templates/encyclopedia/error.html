@@ -5,6 +5,11 @@
 {% endblock %}
 
 {% block body %}
-    <h1 class="text-center text-danger">Error!!!</h1>
-    <h2 class="text-center text-warning">{{error}}</h2>
+    <h1>Pages Related to "{{entry}}"</h1>
+    <h1 class="text-danger">Error!!!</h1>
+    <h2 class="text-warning">{{error}}</h2>
+    <br>
+    {% if true %}
+        <a href="{% url 'create' %}">Create This Page</a>
+    {% endif %}
 {% endblock %}
