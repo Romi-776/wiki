@@ -15,29 +15,33 @@
   </head>
   <body>
     <div class="row">
-      <div class="sidebar col-lg-2 col-md-3">
-        <h2>Wiki</h2>
-        <form action="{% url 'search' %}" method="POST">
+      <div class="sidebar col-lg-2 col-md-3 col-sm-4">
+        <h2 class="text-center">Wiki</h2>
+        <form
+          action="{% url 'search' %}"
+          method="POST"
+          class="align-items-center flex"
+        >
           {% csrf_token %}
           <input
-            class="search"
+            class="search text-center"
             type="text"
             name="q"
             placeholder="Search Encyclopedia"
           />
         </form>
-        <div>
+        <div class="text-center pt-1">
           <a href="{% url 'index' %}">Home</a>
         </div>
-        <div>
+        <div class="text-center pt-1">
           <a href="{% url 'create' %}">Create New Page</a>
         </div>
-        <div>
+        <div class="text-center pt-1">
           <a href="{% url 'random' %}">Random Page</a>
         </div>
         {% block nav %} {% endblock %}
       </div>
-      <div class="main col-lg-10 col-md-9">
+      <div class="main col-lg-10 col-md-9 col-sm-8">
         {% block body %} {% endblock %}
       </div>
     </div>
